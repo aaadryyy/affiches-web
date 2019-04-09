@@ -4,10 +4,13 @@ const PosterComponent = ({ title, subtitle }) => {
   return (
     <div
       style={{
-        width: "149px",
-        height: "105px",
+        minWidth: "149px",
+        minHeight: "105px",
+        maxWidth: "149px",
+        maxHeight: "105px",
         border: "1px solid black",
-        textAlign: "center"
+        textAlign: "center",
+        overflow: "hidden"
       }}
     >
       <p>
