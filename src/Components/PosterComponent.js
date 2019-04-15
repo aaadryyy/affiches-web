@@ -1,25 +1,31 @@
 import React from "react";
+import { Page, Text, View, Document } from "react-pdf";
 
-const PosterComponent = ({ title, subtitle }) => {
-  return (
-    <div
-      style={{
-        minWidth: "149px",
-        minHeight: "105px",
-        maxWidth: "149px",
-        maxHeight: "105px",
-        border: "1px solid black",
-        textAlign: "center",
-        overflow: "hidden"
-      }}
-    >
-      <p>
-        <b>{title}</b>
-        <br />
-        {subtitle}
-      </p>
-    </div>
-  );
+// Create styles
+const styles = {
+  page: {
+    flexDirection: "row",
+    backgroundColor: "#E4E4E4"
+  },
+  section: {
+    margin: 10,
+    padding: 10,
+    flexGrow: 1
+  }
 };
+
+// Create Document Component
+const PosterComponent = ({ title, subtitle }) => (
+  <Document>
+    <Page size="A4" style={styles.page}>
+      <View style={styles.section}>
+        <Text>{title}</Text>
+      </View>
+      <View style={styles.section}>
+        <Text>{subtitle}</Text>
+      </View>
+    </Page>
+  </Document>
+);
 
 export default PosterComponent;
